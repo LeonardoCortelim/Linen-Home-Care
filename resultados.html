@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultados - Linen Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .btn-whatsapp {
+      margin-right: 60px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Estilos específicos da página Resultados */
+    .results {
+      padding: 90px 0;
+      background: var(--bege);
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .results-header h3 {
+      font-size: 42px;
+      color: var(--marrom-escuro);
+      margin-bottom: 16px;
+    }
+
+    .results-header p {
+      font-size: 18px;
+      color: var(--texto-claro);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .result-card {
+      background: var(--branco);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .result-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .result-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .result-images::after {
+      content: 'VS';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--dourado);
+      color: var(--branco);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .result-before,
+    .result-after {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-before img,
+    .result-after img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .result-card:hover .result-before img,
+    .result-card:hover .result-after img {
+      transform: scale(1.05);
+    }
+
+    .result-before::before {
+      content: 'ANTES';
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--branco);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      z-index: 5;
+    }
+
+    .result-after::before {
+      content: 'DEPOIS';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--verde);
+      color: var(--branco);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      z-index: 5;
+    }
+
+    .result-info {
+      padding: 26px;
+    }
+
+    .result-info h4 {
+      font-size: 24px;
+      color: var(--marrom-escuro);
+      margin-bottom: 12px;
+    }
+
+    .result-info p {
+      font-size: 15px;
+      color: var(--texto-claro);
+      line-height: 1.7;
+    }
+
+    .stats-section {
+      background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--verde-escuro) 100%);
+      padding: 70px 0;
+      margin-top: 40px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-item {
+      color: var(--branco);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--dourado);
+    }
+
+    .stat-label {
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 1024px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .results-header h3 {
+        font-size: 32px;
+      }
+
+      .results-header p {
+        font-size: 16px;
+      }
+
+      .result-before img,
+      .result-after img {
+        height: 200px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .stat-number {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-container">
+        <h1 class="logo">Linen</h1>
+        <span class="logo-subtitle">HOME CARE</span>
+      </div>
+
+      <nav>
+        <a href="index.html">Serviços</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a class="btn-whatsapp" href="https://wa.me/554884060951" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Solicitar orçamento
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="img/hero.png" alt="Resultados Linen" class="hero-bg">
+    <div class="container hero-content">
+      <div>
+        <h2>Resultados que Transformam</h2>
+        <p>Veja a diferença que nossos serviços fazem na sua casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="results">
+    <div class="container">
+      <div class="results-header">
+        <h3>Antes e Depois</h3>
+        <p>Cada projeto é uma história de transformação. Confira alguns dos resultados que alcançamos para nossos clientes.</p>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-images">
+            <div class="result-before">
+              <img src="img/carpeteAntes.png" alt="Sofá antes da limpeza">
+            </div>
+            <div class="result-after">
+              <img src="img/carpeteDepois.png" alt="Sofá depois da limpeza">
+            </div>
+          </div>
+          <div class="result-info">
+            <h4>Tapete Persa</h4>
+            <p>Carpete persa restaurado com limpeza especializada, eliminação de manchas, recuperação da aparência original e aplicação de impermeabilizante para maior durabilidade.</p>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-images">
+            <div class="result-before">
+              <img src="img/colchaoAntes.png" alt="Colchão antes da limpeza">
+            </div>
+            <div class="result-after">
+              <img src="img/colchaoDepois.png" alt="Colchão depois da limpeza">
+            </div>
+          </div>
+          <div class="result-info">
+            <h4>Colchão De Solteiro</h4>
+            <p>Restauração do estofado com remoção completa de manchas profundas, higienização técnica e revitalização do tecido, devolvendo aparência limpa e uniforme</p>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-images">
+            <div class="result-before">
+              <img src="img/carpetePersaAntes.png" alt="Tapete antes da limpeza">
+            </div>
+            <div class="result-after">
+              <img src="img/carpetePersaDepois.png" alt="Tapete depois da limpeza">
+            </div>
+          </div>
+          <div class="result-info">
+            <h4>Tapete Persa</h4>
+            <p>Restauração das cores originais e textura macia, com cuidado especial para preservar as fibras delicadas.</p>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-images">
+            <div class="result-before">
+              <img src="img/sofaAntes.png" alt="Cortina antes da limpeza">
+            </div>
+            <div class="result-after">
+              <img src="img/sofaDepois.png" alt="Cortina depois da limpeza">
+            </div>
+          </div>
+          <div class="result-info">
+            <h4>Sofá</h4>
+            <p>Limpeza profunda sem remover do trilho, eliminando poeira acumulada e restaurando a beleza original.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTATÍSTICAS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Clientes Satisfeitos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Taxa de Aprovação</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1200+</div>
+          <div class="stat-label">Serviços Realizados</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5★</div>
+          <div class="stat-label">Avaliação Média</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Adiciona classe ao header no scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

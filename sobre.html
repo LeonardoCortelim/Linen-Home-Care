@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós - Linen Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .btn-whatsapp {
+      margin-right: 60px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Estilos específicos da página Sobre Nós */
+    .about {
+      padding: 90px 0;
+      background: var(--bege);
+    }
+
+    .about-intro {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .about-intro h3 {
+      font-size: 42px;
+      color: var(--marrom-escuro);
+      margin-bottom: 24px;
+    }
+
+    .about-intro p {
+      font-size: 18px;
+      color: var(--texto-claro);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .story-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .story-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .story-content h4 {
+      font-size: 32px;
+      color: var(--marrom-escuro);
+      margin-bottom: 20px;
+    }
+
+    .story-content p {
+      font-size: 16px;
+      color: var(--texto-claro);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .values-section {
+      background: var(--branco);
+      padding: 70px 0;
+      border-radius: 16px;
+      margin-bottom: 80px;
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .values-header h3 {
+      font-size: 38px;
+      color: var(--marrom-escuro);
+      margin-bottom: 16px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .value-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--dourado) 0%, var(--marrom) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      color: var(--branco);
+      box-shadow: 0 8px 25px rgba(212, 175, 122, 0.3);
+    }
+
+    .value-item h5 {
+      font-size: 22px;
+      color: var(--marrom-escuro);
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .value-item p {
+      font-size: 15px;
+      color: var(--texto-claro);
+      line-height: 1.7;
+    }
+
+    .team-section {
+      margin-bottom: 60px;
+    }
+
+    .team-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .team-header h3 {
+      font-size: 38px;
+      color: var(--marrom-escuro);
+      margin-bottom: 16px;
+    }
+
+    .team-header p {
+      font-size: 17px;
+      color: var(--texto-claro);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .team-member {
+      background: var(--branco);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .member-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .team-member:hover .member-image {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .member-info h5 {
+      font-size: 22px;
+      color: var(--marrom-escuro);
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .member-role {
+      font-size: 14px;
+      color: var(--dourado);
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .member-info p {
+      font-size: 14px;
+      color: var(--texto-claro);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .about-story {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .values-grid,
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-intro h3,
+      .values-header h3,
+      .team-header h3 {
+        font-size: 32px;
+      }
+
+      .story-content h4 {
+        font-size: 26px;
+      }
+
+      .values-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .story-image img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-container">
+        <h1 class="logo">Linen</h1>
+        <span class="logo-subtitle">HOME CARE</span>
+      </div>
+
+      <nav>
+        <a href="index.html">Serviços</a>
+        <a href="resultados.html">Resultados</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a class="btn-whatsapp" href="https://wa.me/554884060951" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Solicitar orçamento
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="img/hero.png" alt="Sobre a Linen" class="hero-bg">
+    <div class="container hero-content">
+      <div>
+        <h2>Nossa História</h2>
+        <p>Cuidando do que é mais importante para você desde o início.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS -->
+  <section class="about">
+    <div class="container">
+      <div class="about-intro">
+        <h3>Bem-vindo à Linen Home Care</h3>
+        <p>Somos apaixonados por transformar ambientes e proporcionar qualidade de vida através da limpeza profissional. Nossa missão é cuidar do que há de mais precioso na sua casa com dedicação, técnica e respeito.</p>
+        <p>Há mais de 10 anos no mercado, especializamo-nos em higienização de estofados, colchões, tapetes e cortinas, sempre com foco em resultados excepcionais e satisfação total dos nossos clientes.</p>
+      </div>
+
+      <div class="about-story">
+        <div class="story-image">
+          <img src="img/empresa.jpg" alt="Nossa empresa">
+        </div>
+        <div class="story-content">
+          <h4>Como Tudo Começou</h4>
+          <p>A Linen Home Care nasceu do sonho de oferecer um serviço de excelência em limpeza e higienização residencial. Começamos pequenos, atendendo vizinhos e amigos, mas sempre com o compromisso de entregar o melhor.</p>
+          <p>Com o passar dos anos, investimos em tecnologia de ponta, treinamento constante da equipe e produtos de alta qualidade. Hoje, somos referência na região e orgulhosamente atendemos centenas de famílias que confiam em nosso trabalho.</p>
+          <p>Cada cliente é único para nós, e cada serviço é executado com o mesmo cuidado e atenção aos detalhes que dedicaríamos à nossa própria casa.</p>
+        </div>
+      </div>
+
+      <!-- VALORES -->
+      <div class="values-section">
+        <div class="container">
+          <div class="values-header">
+            <h3>Nossos Valores</h3>
+          </div>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">✨</div>
+              <h5>Excelência</h5>
+              <p>Buscamos a perfeição em cada detalhe, garantindo resultados que superam expectativas.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🤝</div>
+              <h5>Compromisso</h5>
+              <p>Sua satisfação é nossa prioridade. Estamos aqui para cuidar do que é importante para você.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">💚</div>
+              <h5>Sustentabilidade</h5>
+              <p>Utilizamos produtos ecológicos e processos que respeitam o meio ambiente e sua saúde.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🎯</div>
+              <h5>Profissionalismo</h5>
+              <p>Equipe treinada e qualificada, pronta para oferecer o melhor atendimento.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🔒</div>
+              <h5>Confiança</h5>
+              <p>Transparência e honestidade em todas as nossas relações e serviços.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">⚡</div>
+              <h5>Inovação</h5>
+              <p>Sempre atualizados com as melhores técnicas e equipamentos do mercado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EQUIPE -->
+      <div class="team-section">
+        <div class="team-header">
+          <h3>Nossa Equipe</h3>
+          <p>Profissionais dedicados e apaixonados pelo que fazem, prontos para cuidar da sua casa com excelência.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="img/equipe1.jpg" alt="Membro da equipe" class="member-image">
+            <div class="member-info">
+              <h5>Ana Paula Silva</h5>
+              <div class="member-role">Fundadora & CEO</div>
+              <p>Especialista em higienização com mais de 15 anos de experiência no setor.</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="img/equipe2.jpg" alt="Membro da equipe" class="member-image">
+            <div class="member-info">
+              <h5>Carlos Mendes</h5>
+              <div class="member-role">Coordenador Técnico</div>
+              <p>Responsável pelo treinamento e qualidade dos serviços prestados.</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="img/equipe3.jpg" alt="Membro da equipe" class="member-image">
+            <div class="member-info">
+              <h5>Juliana Costa</h5>
+              <div class="member-role">Atendimento ao Cliente</div>
+              <p>Garante que cada cliente receba o melhor atendimento e suporte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Adiciona classe ao header no scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
