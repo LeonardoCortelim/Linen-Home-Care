@@ -20,6 +20,18 @@
       height: 20px;
       fill: currentColor;
     }
+    
+    @media (max-width: 768px) {
+      .btn-whatsapp {
+        margin-right: 0;
+        padding: 10px 18px;
+        font-size: 0;
+      }
+      .btn-whatsapp svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -32,12 +44,20 @@
         <span class="logo-subtitle">HOME CARE</span>
       </div>
 
+      <!-- Menu Desktop -->
       <nav>
         <a href="index.html">Serviços</a>
         <a href="resultados.html">Resultados</a>
         <a href="sobre.html">Sobre nós</a>
         <a href="contato.html">Contato</a>
       </nav>
+
+      <!-- Botão Hambúrguer (só aparece no mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <a class="btn-whatsapp" href="https://wa.me/554884060951" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -47,6 +67,16 @@
       </a>
     </div>
   </header>
+
+  <!-- Menu Mobile (só aparece quando hambúrguer é clicado) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="index.html">Serviços</a>
+      <a href="resultados.html">Resultados</a>
+      <a href="sobre.html">Sobre nós</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -104,6 +134,33 @@
   </section>
 
   <script>
+    // Menu Hambúrguer - Funcionalidade
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Abrir/Fechar menu ao clicar no botão hambúrguer
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Fechar menu ao clicar fora dele
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+
     // Adiciona classe ao header no scroll
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header');
