@@ -77,10 +77,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
       color: var(--branco);
       flex-shrink: 0;
       box-shadow: 0 4px 15px rgba(212, 175, 122, 0.25);
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
     }
 
     .contact-details h4 {
@@ -122,9 +128,15 @@
       align-items: center;
       justify-content: center;
       color: var(--marrom);
-      font-size: 22px;
       text-decoration: none;
       transition: all 0.3s ease;
+    }
+
+    .social-link svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
     }
 
     .social-link:hover {
@@ -371,7 +383,11 @@
           <p>Ficou com alguma dúvida ou quer solicitar um orçamento? Entre em contato conosco através de um dos canais abaixo.</p>
 
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>WhatsApp</h4>
               <p><a href="https://wa.me/554884060951" target="_blank">(48) 98406-0951</a></p>
@@ -380,16 +396,25 @@
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 20.92 17z"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>Telefone</h4>
-              <p><a href="tel:+554884060951">(48) 3456-7890</a></p>
-              <p>Seg a Sex: 8h às 18h | Sáb: 8h às 12h</p>
+              <p><a href="tel:+554884060951">(48) 98406-0951</a></p>
+              <p>Seg a Sex: 10h às 17h </p>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">✉️</div>
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>E-mail</h4>
               <p><a href="mailto:contato@linenhomecare.com.br">contato@linenhomecare.com.br</a></p>
@@ -398,18 +423,37 @@
           </div>
 
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
             <div class="contact-details">
               <h4>Endereço</h4>
-              <p>Rua das Flores, 123 - Centro</p>
-              <p>Gaspar - SC, 89110-000</p>
+              <p>Avenida Patrício Caldeira de Andrade, 1281 -  Capoeira</p>
+              <p>Florianópolis - SC, 88085-150</p>
             </div>
           </div>
 
           <div class="social-links">
-            <a href="#" class="social-link" title="Instagram">📷</a>
-            <a href="#" class="social-link" title="Facebook">👍</a>
-            <a href="https://wa.me/554884060951" class="social-link" target="_blank" title="WhatsApp">💬</a>
+            <a href="#" class="social-link" title="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" title="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/554884060951" class="social-link" target="_blank" title="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -465,11 +509,11 @@
           <div class="hours-grid">
             <div class="hour-item">
               <span class="hour-day">Segunda a Sexta</span>
-              <span class="hour-time">8h às 18h</span>
+              <span class="hour-time">10h às 17h</span>
             </div>
             <div class="hour-item">
               <span class="hour-day">Sábado</span>
-              <span class="hour-time">8h às 12h</span>
+              <span class="hour-time">Fechado</span>
             </div>
             <div class="hour-item">
               <span class="hour-day">Domingo</span>
@@ -485,7 +529,7 @@
 
       <!-- Mapa -->
       <div class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28486.825642890653!2d-48.99847!3d-26.93152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1d0b0b0b0b0b%3A0x0!2sGaspar%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.0842458956447!2d-48.5267!3d-27.5969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95273867f9d5e5e5%3A0x0!2sAvenida%20Patr%C3%ADcio%20Caldeira%20de%20Andrade%2C%201281%2C%20Capoeira%2C%20Florian%C3%B3polis%20-%20SC%2C%2088085-150!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </section>
@@ -513,16 +557,16 @@
 
       // Monta a mensagem para o WhatsApp
       let whatsappMessage = `Olá! Meu nome é ${name}.%0A%0A`;
-      whatsappMessage += `📧 E-mail: ${email}%0A`;
-      whatsappMessage += `📱 Telefone: ${phone}%0A`;
+      whatsappMessage += ` E-mail: ${email}%0A`;
+      whatsappMessage += ` Telefone: ${phone}%0A`;
       
       if (service) {
         const serviceText = document.querySelector(`option[value="${service}"]`).textContent;
-        whatsappMessage += `🛋️ Serviço: ${serviceText}%0A`;
+        whatsappMessage += ` Serviço: ${serviceText}%0A`;
       }
       
       if (message) {
-        whatsappMessage += `%0A💬 Mensagem:%0A${message}`;
+        whatsappMessage += `%0A Mensagem:%0A${message}`;
       }
 
       // Redireciona para o WhatsApp
